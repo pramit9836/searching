@@ -17,7 +17,7 @@ public class SearchInRotatedSortedArray {
         int[] nums = {4,5,6,7,8,9,0,1,2};
         int target = 9;
         System.out.println(findTargetWithRecursion(nums, target, nums.length-1, 0));
-        System.out.println(findTargetWithLoop(nums, target, nums.length-1, 0));
+        System.out.println(findTargetWithLoop(nums, target));
 
 
     }
@@ -48,8 +48,10 @@ public class SearchInRotatedSortedArray {
         }
     }
 
-    public static int findTargetWithLoop(int[] nums, int target, int high, int low) {
+    public static int findTargetWithLoop(int[] nums, int target) {
 
+        int high = nums.length-1;
+        int low = 0;
         while (low <= high) {
             int mid =  (low + high) / 2;
             if (nums[mid] == target) return mid;
